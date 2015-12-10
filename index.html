@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Toshiya Mabuchi">
+
+    <title>M Lab.</title>
+    <!-- include bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- include btn.css -->
+    <link rel="stylesheet" type="text/css" href="./css/body.css">
+    <!-- include jQuery -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <!-- include HighChart -->
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+    <script type="text/javascript" src="./js/highcharts_theme.js"></script>
+    <script type="text/javascript" src="./js/chart_conf.js"></script>
+  </head>
+
+  <body>
+    <h1>Traffic monitor on Websocket(Sample)</h1>
+
+    <div class = "col-md-12 block-mt-md">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Inbound traffic</th>
+                    <th>Outbound traffic</th>
+                </tr>
+            </thead>
+            <tbody>
+                    <tr>
+                    <td>
+                        <div id="traffic_in"></div>
+                    </td>
+                    <td>
+                        <div id="traffic_out"></div>
+                    </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><div id="traffic_chart" style="min-width: 310px; height: 400px; margin: 0 auto"></td>
+                    </tr>
+            </tbody>
+        </table>
+    </div>
+  </body>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+          init_ws_Traffic();
+          document.getElementById('traffic_in').innerHTML = 'Ready';
+          document.getElementById('traffic_out').innerHTML = 'Ready';
+    });
+  </script>
+
+</html>
